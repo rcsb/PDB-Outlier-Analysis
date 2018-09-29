@@ -25,8 +25,8 @@ If the script fails to run for the first time, with the following error message:
   
 please simply re-run the program from the first line to the last line within the same R session.  
 
-##### *Attention: The code use linux parallel mode. The parralle calculation will NOT work on windows machine due to different mechnisms of variable value transfer.
-However, a non-paralle mode is also implemented in the code, although it will be very slow for big PDB data.
+##### *Attention: The code uses linux parallel mode. This parralle mode will NOT work on windows machine due to the different mechnisms of variable transfer.
+However, a non-parallel mode is also implemented in the code, although non-parallel code runs very slow on big PDB data.
 To use non-parallel mode, please do the following change in p1_estimateDensity_all.R
 * comment out line of 
 ```
