@@ -18,22 +18,33 @@ all data files under ./Data/Data_clean/
 * Outout: density estimate under ./Data/Density_hopt/
 * Require: "parallel" package for R; Linux operation system. 
 
+If the script fails to run for the first time, with the following error message:
+
+**"Error in checkForRemoteErrors(val) : 
+  X nodes produced errors; first error: could not find function XXXX"**
+  
+please simply re-run the program from the first line to the last line within the same R session.  
+
 ##### *Attention: The code use linux parallel mode. The parralle calculation will NOT work on windows machine due to different mechnisms of variable value transfer.
 However, a non-paralle mode is also implemented in the code, although it will be very slow for big PDB data.
 To use non-parallel mode, please do the following change in p1_estimateDensity_all.R
-* comment out line of "cluster <- ..."
-* comment out line of "stopCluster(cluster)"
+* comment out line of 
+```
+cluster <- makeCluster(detectCores()-1, type="FORK")
+```
+* comment out line of 
+```
+stopCluster(cluster)
+```
 * make the change of the following line from
+```
 data <- estimateDensityDF(cluster=cluster, data_ori, 2)
+```
 to
+```
 data <- estimateDensityDF(cluster=FALSE, data_ori, 2)
-
+```
 For how to use parallel mode on Windows machine, please refer to online help on how to transfer variable values from one function to another.
-
-Please also note that the script may fail to run for the first time, with the following error message:
-"Error in checkForRemoteErrors(val) : 
-  X nodes produced errors; first error: could not find function XXXX"
-Should this happen, please simply re-run the program from the first line to the last line within the same R session.  
 
 ##### *Note: the default kernel is Gaussian kernel and default bandwidth is from Equation (2) of the manuscript.
 If one wants to change bandwidth, such change can be directly make change in "./R/Util/outlier.R" file
@@ -79,8 +90,10 @@ and ./Compute_different_bandwidth/Data/Data_clean/wwpdf_overall.WilsonBestimate_
 #### (4) run p4_findOutlier_all.R
 * Input: density estimate by various bandwidths, under ./Compute_different_bandwidth/Data/Density_hopt/
 * Output: PDR outliers by various bandwidths, under ./Compute_different_bandwidth/Data/Outlier_hopt/
-##### (4.1) run p41_estimateDensity_kNN.R to calculate density and PDR outliers from kNN kernel, written to ./Compute_different_bandwidth/Data/Outlier_hopt/
-##### (4.2) run p42_estimateDensity_variable.R to calculate density and PDR outliers from variable kernel, written to ./Compute_different_bandwidth/Data/Outlier_hopt/
+##### (4.1) run p41_estimateDensity_kNN.R 
+to calculate density and PDR outliers from kNN kernel, written to ./Compute_different_bandwidth/Data/Outlier_hopt/
+##### (4.2) run p42_estimateDensity_variable.R 
+to calculate density and PDR outliers from variable kernel, written to ./Compute_different_bandwidth/Data/Outlier_hopt/
 
 #### (5) run p5_summarizeOutlier.R
 * Input: density estimate and PDR outliers by various bandwidths/kernels, under ./Compute_different_bandwidth/Data/Outlier_hopt/
