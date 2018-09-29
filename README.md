@@ -10,7 +10,7 @@
 ### ./Compute_different_bandwidth/ contains R code and data for comparison of different bandwidth selection as described in Supplementary data.
 * ./Compute_different_bandwidth/Data/ is similar to ./Data/ except that, (1) ./Data/Data_clean/ contains only a simple random sample of 10000 of estimated Wilson B factors. (2) ./Data/Density_hopt/ and ./Data/Outlier_hopt/ contains calculated density estimation and PDR outliers based on different bandwidths as described in Supplementary data. 
 
-## How to run R code on data
+## How to run the R code on PDB data
 ### Compute probability density estimate, PDR outliers, and MPR on all 22 original data sets: 
 #### (1) run p1_estimateDensity_all.R
 * Input: "items.list" in the same folder that lists the data item name
@@ -20,8 +20,8 @@ all data files under ./Data/Data_clean/
 
 If the script fails to run for the first time, with the following error message:
 
-**"Error in checkForRemoteErrors(val) : 
-  X nodes produced errors; first error: could not find function XXXX"**
+**_"Error in checkForRemoteErrors(val) : 
+  X nodes produced errors; first error: could not find function XXXX"_**
   
 please simply re-run the program from the first line to the last line within the same R session.  
 
