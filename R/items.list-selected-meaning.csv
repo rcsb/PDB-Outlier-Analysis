@@ -1,0 +1,22 @@
+refine.ls_R_factor_R_free,Rfree
+wwpdf_overall.clashscore,clashscore
+wwpdf_overall.percent_rama_outliers,percent ramachandran violations(%)
+reflns.pdbx_redundancy,reflection data multiplicity
+weight_in_asu.polymer,molecular weight in asymmetric unit(Dalton)
+exptl_crystal.density_Matthews,crystal Matthews coefficient(Angstrom^3/Dalton)
+rscc.protein_biso,average B factor of protein atoms(Angstrom^2)
+rscc.nucleic_acid_biso,average B factor of nucleic acid atoms(Angstrom^2)
+rscc.ligand_biso,average B factor of ligand atoms(Angstrom^2)
+rscc.water_biso,average B factor of water atoms(Angstrom^2)
+reflns.B_iso_Wilson_estimate,B factor estimated from Wilson plot(Angstrom^2 Depositor-reported)
+wwpdf_overall.WilsonBestimate,B factor estimated from Wilson plot(Angstrom^2 PDB-calculated)
+exptl_crystal.density_percent_sol,crystal solvent percentage(%)
+exptl_crystal.pdbx_mosaicity,crystal mosaicity
+pdbx_density.Rfree_Rwork,Rfree minus Rwork
+refine.ls_d_res_high,reflection high resolution limit(Angstrom)
+reflns.pdbx_chi_squared,reflection data indexing chi-square
+reflns.pdbx_netI_over_sigmaI,reflection data Intensity/Sigma
+reflns.pdbx_Rmerge_I_obs,reflection data Rmerge
+reflns.percent_possible_obs,reflection data completeness(%)
+wwpdf_overall.percent_rota_outliers,percent rotamer outliers(%)
+wwpdf_overall.percent_RSRZ_outliers,percent RSRZ outliers(%)
